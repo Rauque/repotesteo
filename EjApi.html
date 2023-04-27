@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Ej Api</title>
+    <script>
+        $.getJSON('https://mindicador.cl/api', function(data) {
+    var dailyIndicators = data;
+    $("<p/>", {
+        html: 'El valor actual de la UF es $' + dailyIndicators.uf.valor
+        }).appendTo("body");
+            }).fail(function() {
+    console.log('Error al consumir la API!');
+            });
+
+    </script>
+</head>
+<body>
+
+    <div class="container">
+
+        <h2>Ej Api de monedas</h2><br>
+        <input type="button" id="enviar" value="Mostrar monedas" class="btn btn-success"><br>
+        <table class="table" id="categorias">
+            <thead>
+                <th> Id </th>
+                <th> Nombre </th>
+                <th> Imagen </th>
+                <th> Descripción</th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+    
+</body>
+</html>
